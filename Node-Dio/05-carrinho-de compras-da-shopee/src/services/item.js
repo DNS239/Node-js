@@ -1,13 +1,12 @@
+// item.js
 
-
-async function createItem(name, price, quantity) {
+export default function createItem(name, price, quantity) {
     return {
         name,
         price,
         quantity,
-        subtotal: () => price * quantity,
+        subtotal: function() {
+            return this.price * this.quantity;
+        }
     };
 }
-
-
-export default createItem;
